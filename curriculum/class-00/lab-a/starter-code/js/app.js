@@ -57,7 +57,6 @@ function handleClick(event) {
     return alert('Be sure to click directly on an image!!');
   }
   totalClicks += 1;
-  
   if(totalClicks > 24) {
     container.removeEventListener('click', handleClick);
     container.style.display = 'none';
@@ -104,7 +103,7 @@ function makeChart(){
         backgroundColor: 'gold',
         borderColor: '#214',
         data: votes,
-      }]
+      }],
     },
     options: {
       responsive: false,
@@ -113,11 +112,11 @@ function makeChart(){
           ticks: {
             max: 20,
             min: 0,
-            stepSize: 1
-          }
-        }]
-      }
-    }
+            stepSize: 1,
+          },
+        }],
+      },
+    },
   });
   Chart.defaults.global.defaultFontColor = '#eee'; //eslint-disable-line
 }
@@ -134,7 +133,7 @@ if(localStorage.busmall){
   allProducts = JSON.parse(localStorage.busmall);
 } else {
   console.log('There is no local storage data; initialize app by creating instances');
-  for(const i = 0; i < names.length; i++) {
+  for(let i = 0; i < names.length; i++) {
     new Product(names[i]);
   }
 }
